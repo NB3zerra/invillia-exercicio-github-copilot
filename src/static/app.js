@@ -25,6 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <p>${details.description}</p>
           <p><strong>Schedule:</strong> ${details.schedule}</p>
           <p><strong>Availability:</strong> ${spotsLeft} spots left</p>
+          <p><strong>Participants:</strong> ${details.participants.join(", ") || "No participants yet"}</p>
         `;
 
         activitiesList.appendChild(activityCard);
@@ -66,7 +67,6 @@ document.addEventListener("DOMContentLoaded", () => {
         messageDiv.textContent = result.detail || "An error occurred";
         messageDiv.className = "error";
       }
-
       messageDiv.classList.remove("hidden");
 
       // Hide message after 5 seconds
